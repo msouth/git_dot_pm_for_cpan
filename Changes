@@ -1,0 +1,5 @@
+Revision history for Perl extension Git.
+
+0.02  Thu Jun 20 11:02:03 2013
+    - First import from https://raw.github.com/git/git/master/perl/Git.pm
+      for release on CPAN
