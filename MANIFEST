@@ -2,7 +2,6 @@ Changes
 Makefile.PL
 MANIFEST
 README
-README.md
 t/Git.t
 lib/Git.pm
 patch

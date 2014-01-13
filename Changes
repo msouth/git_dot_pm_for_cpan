@@ -1,5 +1,7 @@
-Revision history for Perl extension Git.
+Revision history for CPAN tracker of git's Git.pm
 
+0.03  Sun Jan 12 22:59:13 CST 2014
+    - New temp_is_locked function (see POD or https://raw.github.com/git/git/master/perl/Git.pm)
 0.02  Thu Jun 20 11:02:03 2013
     - First import from https://raw.github.com/git/git/master/perl/Git.pm
       for release on CPAN
