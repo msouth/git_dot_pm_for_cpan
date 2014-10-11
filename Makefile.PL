@@ -1,12 +1,12 @@
-use 5.014002;
+use 5.008; # this is simply the same version requirement as Git.pm itself has
 use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
 WriteMakefile(
     NAME              => 'Git',
     VERSION_FROM      => 'lib/Git.pm', # finds $VERSION
-    PREREQ_PM         => {}, # e.g., Module::Name => 1.1
+    PREREQ_PM         => {
+        'Error' => 0
+    },
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Git.pm', # retrieve abstract from module
-       AUTHOR         => 'A. U. Thor <msouth@openair.com>') : ()),
+       AUTHOR         => 'Really Just Maintainer <msouth@gmail.com>') : ()),
 );
