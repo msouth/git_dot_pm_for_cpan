@@ -19,7 +19,4 @@ lib/Git/SVN/Migration.pm
 lib/Git/SVN/Prompt.pm
 lib/Git/SVN/Ra.pm
 lib/Git/SVN/Utils.pm
-patch
 t/Git.t
-was_MANIFEST
-was_README
