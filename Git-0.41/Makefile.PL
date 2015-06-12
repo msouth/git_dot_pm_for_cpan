@@ -7,7 +7,7 @@ use warnings;
 use ExtUtils::MakeMaker;
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "'This is the Git.pm, plus the other files in the perl/Git directory, from github\x{2019}s git/git, which is a mirror of the git source.  I (cpan msouth, or current maintainer) update the VERSION string here, and maintain this little bit of POD.  That\x{2019}s it.  The only reason you would need this is if you are using something like Git::Hooks and you are using a perlbrewed (or otherwise separate) perl from the one git is using on your system (e.g. if you have a dev perl that\x{2019}s separate from system perl and git uses the system perl.  Then the Git.pm gets installed in the system lib and you have no way of getting it from CPAN, so your code that uses modules that depend on it doesn\x{2019}t work).  Except for this paragraph and the VERSION string, this is just a copy of the latests version of perl/Git.pm from https://raw.github.com/git/git/master/perl/Git.pm.  Or, at least, it should be--let me know if it\x{2019}s out of date and I hadn\x{2019}t noticed.)'",
+  "ABSTRACT" => "This is the Git.pm, plus the other files in the perl/Git directory, from github's git/git.",
   "AUTHOR" => "Really Just Maintainer <msouth\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
