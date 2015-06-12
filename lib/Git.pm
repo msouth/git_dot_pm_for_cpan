@@ -66,6 +66,21 @@ require Exporter;
 
 =head1 DESCRIPTION
 
+[MAINTAINER NOTE: This is Git.pm, plus the other files in the perl/Git directory,
+from github's git/git., which is a mirror of the git source.  I (cpan msouth, or
+current maintainer) update the VERSION string (necessary on CPAN because of another
+CPAN distribution that confused the CPAN toolchain about which was the actual
+official Git.pm), add this explanatory paragraph, and use Dist::Zilla to package
+and release on CPAN.  The only reason that I know of that you would need this is
+if you are using something like Git::Hooks and you are using a perlbrewed (or
+otherwise separate) perl from the one git is using on your system (e.g. if you
+have a dev perl that’s separate from system perl, and git uses the system perl.
+Then the Git.pm gets installed in the system lib and you have no way of getting
+it from CPAN, so your code--that uses modules that depend on Git.pm--doesn’t work).
+I try to keep this up to date, so that if you do pull this from CPAN it will be,
+hopefully, identical in functionality to the Git.pm and Git/*.pm from the git
+distribution.  If that is not the case, contact me and I'll look into it.]
+
 This module provides Perl scripts easy way to interface the Git version control
 system. The modules have an easy and well-tested way to call arbitrary Git
 commands; in the future, the interface will also provide specialized methods
