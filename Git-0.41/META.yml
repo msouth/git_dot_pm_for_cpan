@@ -19,4 +19,5 @@ requires:
   Fcntl: '0'
   IPC::Open2: '0'
   Time::Local: '0'
+  perl: '5.008'
 version: '0.41'

@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-
+use 5.008;
 
 use ExtUtils::MakeMaker;
 
@@ -15,6 +15,7 @@ my %WriteMakefileArgs = (
   "DISTNAME" => "Git",
   "EXE_FILES" => [],
   "LICENSE" => "gpl",
+  "MIN_PERL_VERSION" => "5.008",
   "NAME" => "Git",
   "PREREQ_PM" => {
     "Carp" => 0,
