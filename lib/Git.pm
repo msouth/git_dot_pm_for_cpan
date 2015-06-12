@@ -16,7 +16,6 @@ BEGIN {
 our ($VERSION, @ISA, @EXPORT, @EXPORT_OK);
 
 # Totally unstable API.
-$VERSION = '0.40';
 
 
 =head1 SYNOPSIS
