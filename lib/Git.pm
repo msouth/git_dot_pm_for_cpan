@@ -16,6 +16,7 @@ BEGIN {
 our ($VERSION, @ISA, @EXPORT, @EXPORT_OK);
 
 # Totally unstable API.
+$VERSION = '0.01';
 
 
 =head1 SYNOPSIS
@@ -64,19 +65,6 @@ require Exporter;
 
 
 =head1 DESCRIPTION
-
-This is the Git.pm from github's git/git, which is a mirror of the git source.
-I (cpan msouth, or current maintainer) update the VERSION string here, and 
-maintain this little bit of POD.  That's it.  The only reason you would
-need this is if you are using something like Git::Hooks and you are using
-a perlbrewed (or otherwise separate) perl from the one git is using on your
-system (e.g. if you have a dev perl that's separate from system perl and git
-uses the system perl.  Then the Git.pm gets installed in the system lib and you
-have no way of getting it from CPAN, so your code that uses modules that 
-depend on it doesn't work).  Except for this paragraph and the VERSION
-string, this is just a copy of the latests version of perl/Git.pm from 
-https://raw.github.com/git/git/master/perl/Git.pm .  Or, at least, it should
-be--let me know if it's out of date and I hadn't noticed.)
 
 This module provides Perl scripts easy way to interface the Git version control
 system. The modules have an easy and well-tested way to call arbitrary Git
@@ -707,7 +695,7 @@ Retrieve the integer configuration C<VARIABLE>. The return value
 is simple decimal number.  An optional value suffix of 'k', 'm',
 or 'g' in the config file will cause the value to be multiplied
 by 1024, 1048576 (1024^2), or 1073741824 (1024^3) prior to output.
-It would return C<undef> if configuration variable is not defined,
+It would return C<undef> if configuration variable is not defined.
 
 =cut
 
@@ -716,7 +704,7 @@ sub config_int {
 }
 
 # Common subroutine to implement bulk of what the config* family of methods
-# do. This curently wraps command('config') so it is not so fast.
+# do. This currently wraps command('config') so it is not so fast.
 sub _config_common {
 	my ($opts) = shift @_;
 	my ($self, $var) = _maybe_self(@_);
@@ -1306,8 +1294,11 @@ sub _temp_cache {
 			$tmpdir = $self->repo_path();
 		}
 
+		my $n = $name;
+		$n =~ s/\W/_/g; # no strange chars
+
 		($$temp_fd, $fname) = File::Temp::tempfile(
-			'Git_XXXXXX', UNLINK => 1, DIR => $tmpdir,
+			"Git_${n}_XXXXXX", UNLINK => 1, DIR => $tmpdir,
 			) or throw Error::Simple("couldn't open new temp file");
 
 		$$temp_fd->autoflush;
